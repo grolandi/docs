@@ -4,9 +4,9 @@
   "name": "Help Center",
   "description": "Documentation and guides for this template—workspace setup, product how-tos, and support.",
   "colors": {
-    "primary": "#166E3F",
-    "light": "#26BD6C",
-    "dark": "#166E3F"
+    "primary": "#009BE5",
+    "light": "#009BE5",
+    "dark": "#009BE5"
   },
   "favicon": "/favicon.ico",
   "icons": {
@@ -201,6 +201,173 @@
           }
         ]
       }
+        ]
+      },
+      {
+        "product": "My inBiot Platform",
+        "description": "Complete guide to the My inBiot Platform.",
+        "icon": "monitor-dot",
+        "groups": [
+          {
+            "group": "Introduction",
+            "icon": "rocket",
+            "root": "my-inbiot-platform/introduction/index",
+            "pages": [
+              "my-inbiot-platform/introduction/access-to-platform",
+              "my-inbiot-platform/introduction/account-sign-up",
+              "my-inbiot-platform/introduction/account-login",
+              "my-inbiot-platform/introduction/platform-architecture"
+            ]
+          },
+          {
+            "group": "Account Management",
+            "icon": "user",
+            "root": "my-inbiot-platform/account-management/index",
+            "pages": [
+              "my-inbiot-platform/account-management/account-configuration",
+              "my-inbiot-platform/account-management/data-settings",
+              "my-inbiot-platform/account-management/unit-settings"
+            ]
+          },
+          {
+            "group": "My Workspace Management",
+            "icon": "layout-dashboard",
+            "root": "my-inbiot-platform/workspace-management/index",
+            "pages": [
+              {
+                "group": "My Projects Management",
+                "icon": "folder-open",
+                "root": "my-inbiot-platform/workspace-management/projects/index",
+                "pages": [
+                  "my-inbiot-platform/workspace-management/projects/create-project",
+                  "my-inbiot-platform/workspace-management/projects/configure-project",
+                  "my-inbiot-platform/workspace-management/projects/users-management",
+                  "my-inbiot-platform/workspace-management/projects/roles-management",
+                  "my-inbiot-platform/workspace-management/projects/delete-project"
+                ]
+              },
+              {
+                "group": "My Devices Management",
+                "icon": "cpu",
+                "root": "my-inbiot-platform/workspace-management/devices/index",
+                "pages": [
+                  "my-inbiot-platform/workspace-management/devices/add-device",
+                  "my-inbiot-platform/workspace-management/devices/configure-device",
+                  "my-inbiot-platform/workspace-management/devices/delete-device",
+                  "my-inbiot-platform/workspace-management/devices/manufacturing-report"
+                ]
+              },
+              {
+                "group": "My Integrations Management",
+                "icon": "plug",
+                "root": "my-inbiot-platform/workspace-management/integrations/index",
+                "pages": [
+                  "my-inbiot-platform/workspace-management/integrations/create-api-key",
+                  "my-inbiot-platform/workspace-management/integrations/apis-management",
+                  "my-inbiot-platform/workspace-management/integrations/export-apis-file"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Project Features",
+            "icon": "layers",
+            "root": "my-inbiot-platform/project-features/index",
+            "pages": [
+              "my-inbiot-platform/project-features/devices-management",
+              {
+                "group": "Dashboard",
+                "icon": "bar-chart-2",
+                "root": "my-inbiot-platform/project-features/dashboard/index",
+                "pages": [
+                  {
+                    "group": "Global Dashboard",
+                    "root": "my-inbiot-platform/project-features/dashboard/global-dashboard/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/dashboard/global-dashboard/groups-management",
+                      "my-inbiot-platform/project-features/dashboard/global-dashboard/iaq-qualitative-view",
+                      "my-inbiot-platform/project-features/dashboard/global-dashboard/iaq-quantitative-view",
+                      "my-inbiot-platform/project-features/dashboard/global-dashboard/devices-status-view"
+                    ]
+                  },
+                  {
+                    "group": "Individual Dashboard",
+                    "root": "my-inbiot-platform/project-features/dashboard/individual-dashboard/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/dashboard/individual-dashboard/realtime-iaq-parameters",
+                      "my-inbiot-platform/project-features/dashboard/individual-dashboard/realtime-iaq-indicators",
+                      "my-inbiot-platform/project-features/dashboard/individual-dashboard/historical-charts",
+                      "my-inbiot-platform/project-features/dashboard/individual-dashboard/heatmap",
+                      "my-inbiot-platform/project-features/dashboard/individual-dashboard/outdoor-weather"
+                    ]
+                  },
+                  "my-inbiot-platform/project-features/dashboard/data-export"
+                ]
+              },
+              {
+                "group": "Shareables",
+                "icon": "share-2",
+                "root": "my-inbiot-platform/project-features/shareables/index",
+                "pages": [
+                  "my-inbiot-platform/project-features/shareables/create-shareable",
+                  "my-inbiot-platform/project-features/shareables/edit-shareable",
+                  {
+                    "group": "Share a Shareable",
+                    "root": "my-inbiot-platform/project-features/shareables/share-shareable/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/shareables/share-shareable/create-qr-code",
+                      "my-inbiot-platform/project-features/shareables/share-shareable/public-link-dashboard",
+                      "my-inbiot-platform/project-features/shareables/share-shareable/public-link-fullscreen"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Alerts",
+                "icon": "bell",
+                "root": "my-inbiot-platform/project-features/alerts/index",
+                "pages": [
+                  "my-inbiot-platform/project-features/alerts/create-alert",
+                  "my-inbiot-platform/project-features/alerts/manage-emails",
+                  "my-inbiot-platform/project-features/alerts/edit-alert",
+                  "my-inbiot-platform/project-features/alerts/alerts-management"
+                ]
+              },
+              {
+                "group": "Certifications",
+                "icon": "award",
+                "root": "my-inbiot-platform/project-features/certifications/index",
+                "pages": [
+                  "my-inbiot-platform/project-features/certifications/building-certification",
+                  {
+                    "group": "WELL Standard Certification",
+                    "root": "my-inbiot-platform/project-features/certifications/well-standard/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/certifications/well-standard/create-annual-data-report",
+                      "my-inbiot-platform/project-features/certifications/well-standard/create-sensor-justification",
+                      "my-inbiot-platform/project-features/certifications/well-standard/create-calibration-report"
+                    ]
+                  },
+                  {
+                    "group": "RESET Air Certification",
+                    "root": "my-inbiot-platform/project-features/certifications/reset-air/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/certifications/reset-air/realtime-verification"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Smart Reports",
+                "icon": "sparkles",
+                "root": "my-inbiot-platform/project-features/smart-reports/index",
+                "pages": [
+                  "my-inbiot-platform/project-features/smart-reports/create-smart-report",
+                  "my-inbiot-platform/project-features/smart-reports/interpret-smart-report"
+                ]
+              }
+            ]
+          }
         ]
       },
       {
