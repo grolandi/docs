@@ -356,22 +356,22 @@
                       "my-inbiot-platform/project-features/certifications/well-standard/information",
                       "my-inbiot-platform/project-features/certifications/well-standard/create-annual-data-report",
                       "my-inbiot-platform/project-features/certifications/well-standard/create-sensor-justification",
-                      "my-inbiot-platform/project-features/certifications/well-standard/create-calibration-report",
-                      {
-                        "group": "RESET Air Certification",
-                        "root": "my-inbiot-platform/project-features/certifications/reset-air/index",
-                        "pages": [
-                          "my-inbiot-platform/project-features/certifications/reset-air/information",
-                          "my-inbiot-platform/project-features/certifications/reset-air/realtime-verification"
-                        ]
-                      },
-                      {
-                        "group": "LEEAD Certification",
-                        "root": "my-inbiot-platform/project-features/certifications/leead/index",
-                        "pages": [
-                          "my-inbiot-platform/project-features/certifications/leead/information"
-                        ]
-                      }
+                      "my-inbiot-platform/project-features/certifications/well-standard/create-calibration-report"
+                    ]
+                  },
+                  {
+                    "group": "RESET Air Certification",
+                    "root": "my-inbiot-platform/project-features/certifications/reset-air/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/certifications/reset-air/information",
+                      "my-inbiot-platform/project-features/certifications/reset-air/realtime-verification"
+                    ]
+                  },
+                  {
+                    "group": "LEEAD Certification",
+                    "root": "my-inbiot-platform/project-features/certifications/leead/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/certifications/leead/information"
                     ]
                   }
                 ]
