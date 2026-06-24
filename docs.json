@@ -108,26 +108,12 @@
             "icon": "plug",
             "root": "bms-and-integrations/index",
             "pages": [
-              "bms-and-integrations/contact-support",
-              "bms-and-integrations/status-incidents"
-            ]
-          },
-          {
-            "group": "Integrations",
-            "icon": "link",
-            "root": "bms-and-integrations/integrations/index",
-            "pages": [
-              "bms-and-integrations/integrations/connect-slack",
-              "bms-and-integrations/integrations/connect-crm"
-            ]
-          },
-          {
-            "group": "Troubleshooting",
-            "icon": "wrench",
-            "root": "bms-and-integrations/troubleshooting/index",
-            "pages": [
-              "bms-and-integrations/troubleshooting/login-issues",
-              "bms-and-integrations/troubleshooting/performance-issues"
+              "bms-and-integrations/bms",
+              {
+                "group": "API",
+                "icon": "code",
+                "href": "https://docs.myinbiotpublicapi.com/"
+              }
             ]
           }
         ]
