@@ -274,34 +274,29 @@
             "icon": "layers",
             "root": "my-inbiot-platform/project-features/index",
             "pages": [
-              "my-inbiot-platform/project-features/devices-management",
               {
-                "group": "Dashboard",
-                "icon": "bar-chart-2",
-                "root": "my-inbiot-platform/project-features/dashboard/index",
+                "group": "Global Dashboard",
+                "icon": "layout-dashboard",
+                "root": "my-inbiot-platform/project-features/global-dashboard/index",
                 "pages": [
-                  {
-                    "group": "Global Dashboard",
-                    "root": "my-inbiot-platform/project-features/dashboard/global-dashboard/index",
-                    "pages": [
-                      "my-inbiot-platform/project-features/dashboard/global-dashboard/groups-management",
-                      "my-inbiot-platform/project-features/dashboard/global-dashboard/iaq-qualitative-view",
-                      "my-inbiot-platform/project-features/dashboard/global-dashboard/iaq-quantitative-view",
-                      "my-inbiot-platform/project-features/dashboard/global-dashboard/devices-status-view"
-                    ]
-                  },
+                  "my-inbiot-platform/project-features/global-dashboard/assign-device-to-project",
+                  "my-inbiot-platform/project-features/global-dashboard/groups-management",
+                  "my-inbiot-platform/project-features/global-dashboard/iaq-qualitative-view",
+                  "my-inbiot-platform/project-features/global-dashboard/iaq-quantitative-view",
+                  "my-inbiot-platform/project-features/global-dashboard/devices-status-view",
+                  "my-inbiot-platform/project-features/global-dashboard/data-export",
                   {
                     "group": "Individual Dashboard",
-                    "root": "my-inbiot-platform/project-features/dashboard/individual-dashboard/index",
+                    "root": "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/index",
                     "pages": [
-                      "my-inbiot-platform/project-features/dashboard/individual-dashboard/realtime-iaq-parameters",
-                      "my-inbiot-platform/project-features/dashboard/individual-dashboard/realtime-iaq-indicators",
-                      "my-inbiot-platform/project-features/dashboard/individual-dashboard/historical-charts",
-                      "my-inbiot-platform/project-features/dashboard/individual-dashboard/heatmap",
-                      "my-inbiot-platform/project-features/dashboard/individual-dashboard/outdoor-weather"
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/realtime-iaq-parameters",
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/realtime-iaq-indicators",
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/historical-charts",
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/heatmap",
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/outdoor-weather",
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/data-export"
                     ]
-                  },
-                  "my-inbiot-platform/project-features/dashboard/data-export"
+                  }
                 ]
               },
               {
@@ -327,10 +322,26 @@
                 "icon": "bell",
                 "root": "my-inbiot-platform/project-features/alerts/index",
                 "pages": [
-                  "my-inbiot-platform/project-features/alerts/create-alert",
-                  "my-inbiot-platform/project-features/alerts/manage-emails",
-                  "my-inbiot-platform/project-features/alerts/edit-alert",
-                  "my-inbiot-platform/project-features/alerts/alerts-management"
+                  {
+                    "group": "Alertas de Parametros",
+                    "root": "my-inbiot-platform/project-features/alerts/parametros/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/alerts/parametros/create-alert",
+                      "my-inbiot-platform/project-features/alerts/parametros/manage-emails",
+                      "my-inbiot-platform/project-features/alerts/parametros/edit-alert",
+                      "my-inbiot-platform/project-features/alerts/parametros/alerts-management"
+                    ]
+                  },
+                  {
+                    "group": "Alertas de Inactividad",
+                    "root": "my-inbiot-platform/project-features/alerts/inactividad/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/alerts/inactividad/create-alert",
+                      "my-inbiot-platform/project-features/alerts/inactividad/manage-emails",
+                      "my-inbiot-platform/project-features/alerts/inactividad/edit-alert",
+                      "my-inbiot-platform/project-features/alerts/inactividad/alerts-management"
+                    ]
+                  }
                 ]
               },
               {
@@ -338,21 +349,29 @@
                 "icon": "award",
                 "root": "my-inbiot-platform/project-features/certifications/index",
                 "pages": [
-                  "my-inbiot-platform/project-features/certifications/building-certification",
                   {
-                    "group": "WELL Standard Certification",
+                    "group": "WELL Standard / WELL Performance Rating Certification",
                     "root": "my-inbiot-platform/project-features/certifications/well-standard/index",
                     "pages": [
+                      "my-inbiot-platform/project-features/certifications/well-standard/information",
                       "my-inbiot-platform/project-features/certifications/well-standard/create-annual-data-report",
                       "my-inbiot-platform/project-features/certifications/well-standard/create-sensor-justification",
-                      "my-inbiot-platform/project-features/certifications/well-standard/create-calibration-report"
-                    ]
-                  },
-                  {
-                    "group": "RESET Air Certification",
-                    "root": "my-inbiot-platform/project-features/certifications/reset-air/index",
-                    "pages": [
-                      "my-inbiot-platform/project-features/certifications/reset-air/realtime-verification"
+                      "my-inbiot-platform/project-features/certifications/well-standard/create-calibration-report",
+                      {
+                        "group": "RESET Air Certification",
+                        "root": "my-inbiot-platform/project-features/certifications/reset-air/index",
+                        "pages": [
+                          "my-inbiot-platform/project-features/certifications/reset-air/information",
+                          "my-inbiot-platform/project-features/certifications/reset-air/realtime-verification"
+                        ]
+                      },
+                      {
+                        "group": "LEEAD Certification",
+                        "root": "my-inbiot-platform/project-features/certifications/leead/index",
+                        "pages": [
+                          "my-inbiot-platform/project-features/certifications/leead/information"
+                        ]
+                      }
                     ]
                   }
                 ]
