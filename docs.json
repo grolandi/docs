@@ -204,6 +204,83 @@
         ]
       },
       {
+        "product": "MICA Devices",
+        "description": "Installation, configuration, and technical reference for MICA devices.",
+        "icon": "cpu",
+        "groups": [
+          {
+            "group": "Inicio",
+            "icon": "house",
+            "root": "mica-devices/index",
+            "pages": [
+              "mica-devices/antes-de-comenzar"
+            ]
+          },
+          {
+            "group": "Instalación",
+            "icon": "wrench",
+            "root": "mica-devices/instalacion/index",
+            "pages": [
+              "mica-devices/instalacion/wi-fi",
+              "mica-devices/instalacion/modbus-tcp-ip-api-mqtt",
+              "mica-devices/instalacion/modbus-rtu",
+              "mica-devices/instalacion/lorawan-sigfox",
+              "mica-devices/instalacion/lorawan-sigfox-modbus-rtu",
+              "mica-devices/instalacion/nb-iot-lte-m",
+              "mica-devices/instalacion/nb-iot-lte-m-modbus-rtu",
+              "mica-devices/instalacion/bacnet"
+            ]
+          },
+          {
+            "group": "Configuración",
+            "icon": "settings",
+            "root": "mica-devices/configuracion/index",
+            "pages": [
+              "mica-devices/configuracion/pasos-generales",
+              {
+                "group": "Conectividad",
+                "root": "mica-devices/configuracion/conectividad/index",
+                "pages": [
+                  "mica-devices/configuracion/conectividad/wi-fi",
+                  "mica-devices/configuracion/conectividad/lorawan",
+                  "mica-devices/configuracion/conectividad/sigfox",
+                  "mica-devices/configuracion/conectividad/nb-iot-lte-m",
+                  "mica-devices/configuracion/conectividad/ethernet"
+                ]
+              },
+              {
+                "group": "Comunicación local",
+                "root": "mica-devices/configuracion/comunicacion-local/index",
+                "pages": [
+                  "mica-devices/configuracion/comunicacion-local/modbus",
+                  "mica-devices/configuracion/comunicacion-local/bacnet"
+                ]
+              },
+              "mica-devices/configuracion/ajustes-del-dispositivo",
+              "mica-devices/configuracion/actualizar-dispositivo",
+              "mica-devices/configuracion/anadir-mica-a-my-inbiot"
+            ]
+          },
+          {
+            "group": "Información Técnica",
+            "icon": "file-text",
+            "root": "mica-devices/informacion-tecnica/index",
+            "pages": [
+              "mica-devices/informacion-tecnica/descripcion-general",
+              "mica-devices/informacion-tecnica/caracteristicas-tecnicas",
+              "mica-devices/informacion-tecnica/sensores",
+              "mica-devices/informacion-tecnica/niveles-y-recomendaciones",
+              "mica-devices/informacion-tecnica/indicadores",
+              "mica-devices/informacion-tecnica/led-y-boton-tactil",
+              "mica-devices/informacion-tecnica/calibracion",
+              "mica-devices/informacion-tecnica/plataforma-my-inbiot",
+              "mica-devices/informacion-tecnica/indicaciones-de-seguridad",
+              "mica-devices/informacion-tecnica/notas-de-uso"
+            ]
+          }
+        ]
+      },
+      {
         "product": "My inBiot Platform",
         "description": "Complete guide to the My inBiot Platform.",
         "icon": "monitor-dot",
