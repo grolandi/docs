@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Help Center",
-  "description": "Documentation and guides for this template—workspace setup, product how-tos, and support.",
+  "name": "inBiot",
+  "description": "Documentation and guides for inBiot products.",
   "colors": {
     "primary": "#009BE5",
     "light": "#009BE5",
