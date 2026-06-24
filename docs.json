@@ -112,7 +112,14 @@
               {
                 "group": "API",
                 "icon": "code",
-                "href": "https://docs.myinbiotpublicapi.com/"
+                "root": "bms-and-integrations/api/index",
+                "pages": [
+                  "bms-and-integrations/api/types-of-parameters",
+                  "bms-and-integrations/api/types-of-indicators",
+                  "bms-and-integrations/api/latest-data",
+                  "bms-and-integrations/api/historical-data",
+                  "bms-and-integrations/api/device-data-model"
+                ]
               }
             ]
           }
@@ -303,7 +310,7 @@
             ]
           }
         ]
-      },
+      }
     ]
   },
   "logo": {

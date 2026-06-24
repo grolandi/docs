@@ -1,0 +1,84 @@
+---
+title: "Historical Data"
+description: "Retrieve device IAQ measurements between two specific dates."
+---
+
+Retrieve device IAQ measurements between two specific dates.
+
+## Usage Limitations
+
+This function is subject to the API's maximum limit of **31 days per query**. The range of days you can retrieve in a single request depends on the **upload periodicity configured on your device** and the **number of parameters** included in your MICA model.
+
+Below you'll find an **estimated guideline** of the maximum number of days you can query, based on your MICA version and the upload periodicity:
+
+| Interval | MICA Mini | MICA | MICA Plus | MICA WELL |
+|----------|-----------|------|-----------|-----------|
+| 1 min | ~13 days | ~7 days | ~6 days | ~5 days |
+| 5 min | 31 days (cap) | 31 days (cap) | 31 days (cap) | ~26 days |
+| 10 min | 31 days (cap) | 31 days (cap) | 31 days (cap) | 31 days (cap) |
+| 15 min | 31 days (cap) | 31 days (cap) | 31 days (cap) | 31 days (cap) |
+
+<Warning>
+  **Please note:** If your query exceeds these limits, the request may fail. We recommend adjusting the upload periodicity or reducing the date range when working with multiple parameters.
+
+  Max range per request: 31 days. Max response: 5.5 MB. If exceeded, API returns HTTP 413 "Too many data to handle. Reduce the time range."
+</Warning>
+
+## Device Historical Data
+
+`GET /measurements-by-time/{apiKey}/{systemId}`
+
+Retrieve device measurements between two specific dates.
+
+### Path Parameters
+
+<ParamField path="apiKey" type="string" required>
+  API Key generated in My inBiot platform that identifies your device.
+</ParamField>
+
+<ParamField path="systemId" type="string" required>
+  Device ID generated in My inBiot platform that identifies your device.
+</ParamField>
+
+<ParamField path="startDate" type="string" required>
+  The start time of data collection. ISO-8601 format `YYYY-MM-DDTHH:mm:ss.SSS`
+</ParamField>
+
+<ParamField path="endDate" type="string" required>
+  The end time of data collection. ISO-8601 format `YYYY-MM-DDTHH:mm:ss.SSS`
+</ParamField>
+
+### Responses
+
+<ResponseField name="200" type="object">
+  Successful operation. Returns an array of device parameter measurements.
+</ResponseField>
+
+<ResponseField name="404" type="object">
+  (Not found) The system could not be found with this API key.
+</ResponseField>
+
+<ResponseField name="413" type="object">
+  (Payload too large) Too many data to handle. Reduce the time range.
+</ResponseField>
+
+<ResponseField name="429" type="object">
+  (Too many requests) When reached the limit of 6 requests per device per hour.
+</ResponseField>
+
+<ResponseField name="500" type="object">
+  Server error.
+</ResponseField>
+
+### Response Example
+
+```json
+[
+  {
+    "_id": "string",
+    "type": "temperature, humidity, co2, ...",
+    "unit": "ºC, %, ppm, μg/m³, ppb",
+    "measurements": [ ... ]
+  }
+]
+```
