@@ -322,12 +322,22 @@
       {
         "label": "Get support",
         "href": "/support/contact-support"
+      },
+      {
+        "href": "https://www.inbiotair.com/",
+        "label": "Visit inbiotair.com"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
       "href": "https://dashboard.mintlify.com"
+    }
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/inbiot",
+      "youtube": "https://www.youtube.com/@inbiotmonitoringsl"
     }
   }
 }
