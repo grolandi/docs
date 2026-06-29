@@ -102,16 +102,17 @@
 // PDF Download button — injected on every doc page
 (function () {
   var BTN_ID = 'inbiot-pdf-btn';
+  var _observer = null;
 
-  function injectPdfButton() {
-    if (document.getElementById(BTN_ID)) return;
-    if (window.location.pathname === '/' || window.location.pathname === '') return;
+  function tryInject() {
+    if (document.getElementById(BTN_ID)) return true;
+    if (window.location.pathname === '/' || window.location.pathname === '') return true;
 
-    var article = document.querySelector('article');
-    if (!article) return;
-
-    var h1 = article.querySelector('h1');
-    if (!h1) return;
+    var h1 = document.querySelector('article h1') ||
+             document.querySelector('main h1') ||
+             document.querySelector('[class*="content"] h1') ||
+             document.querySelector('h1');
+    if (!h1) return false;
 
     var btn = document.createElement('button');
     btn.id = BTN_ID;
@@ -123,39 +124,52 @@
         '<line x1="12" y1="15" x2="12" y2="3"/>' +
       '</svg> Download PDF';
     btn.addEventListener('click', function () { window.print(); });
-
     h1.insertAdjacentElement('afterend', btn);
+    return true;
   }
 
-  function reinjectPdfButton() {
+  function startObserver() {
+    if (_observer) { _observer.disconnect(); _observer = null; }
+    if (tryInject()) return;
+
+    _observer = new MutationObserver(function () {
+      if (tryInject()) {
+        _observer.disconnect();
+        _observer = null;
+      }
+    });
+    _observer.observe(document.body, { childList: true, subtree: true });
+
+    setTimeout(function () {
+      if (_observer) { _observer.disconnect(); _observer = null; }
+    }, 5000);
+  }
+
+  function onNavigate() {
     var existing = document.getElementById(BTN_ID);
     if (existing) existing.remove();
-    injectPdfButton();
+    setTimeout(startObserver, 100);
   }
 
   // Intercept Next.js client-side navigation
   var _push = history.pushState;
   history.pushState = function () {
     _push.apply(history, arguments);
-    setTimeout(reinjectPdfButton, 350);
+    onNavigate();
   };
 
   var _replace = history.replaceState;
   history.replaceState = function () {
     _replace.apply(history, arguments);
-    setTimeout(reinjectPdfButton, 350);
+    onNavigate();
   };
 
-  window.addEventListener('popstate', function () {
-    setTimeout(reinjectPdfButton, 350);
-  });
+  window.addEventListener('popstate', onNavigate);
 
   // Initial load
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      setTimeout(injectPdfButton, 500);
-    });
+    document.addEventListener('DOMContentLoaded', startObserver);
   } else {
-    setTimeout(injectPdfButton, 500);
+    startObserver();
   }
 })();
