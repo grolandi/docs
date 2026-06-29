@@ -121,41 +121,43 @@
     }
 
     function run() {
-      var source = document.querySelector('article') ||
-                   document.querySelector('main') ||
-                   document.body;
+      var content = document.querySelector('article') ||
+                    document.querySelector('main') ||
+                    document.body;
 
-      var clone = source.cloneNode(true);
-
-      // Strip elements that shouldn't appear in the PDF
-      clone.querySelectorAll(
-        '#inbiot-pdf-btn, [data-component-part="contextual-menu"], [class*="pagination"], [class*="prev-next"]'
-      ).forEach(function (el) { el.remove(); });
-
-      // Render off-screen so html2canvas can measure it properly
-      var host = document.createElement('div');
-      host.style.cssText = 'position:fixed;top:0;left:-9999px;width:680px;background:#fff;color:#111;';
-      host.appendChild(clone);
-      document.body.appendChild(host);
-
-      // Prevent content overflow inside the clone
-      clone.style.cssText = 'max-width:680px;overflow:visible;word-break:break-word;';
-      clone.querySelectorAll('img').forEach(function (img) { img.style.maxWidth = '100%'; });
-      clone.querySelectorAll('pre, code').forEach(function (el) { el.style.whiteSpace = 'pre-wrap'; el.style.wordBreak = 'break-all'; });
-      clone.querySelectorAll('table').forEach(function (t) { t.style.width = '100%'; t.style.tableLayout = 'fixed'; t.style.wordBreak = 'break-word'; });
+      // Temporarily hide chrome elements that shouldn't appear in the PDF
+      var HIDE = [
+        '#inbiot-pdf-btn',
+        '#navbar', '#topbar', '#sidebar',
+        '[id*="navbar"]', '[id*="topbar"]', '[id*="sidebar"]',
+        '[data-component-part="sidebar"]',
+        '[data-component-part="contextual-menu"]',
+        '[class*="pagination"]', '[class*="prev-next"]',
+        'footer', 'nav'
+      ];
+      var hidden = [];
+      HIDE.forEach(function (sel) {
+        document.querySelectorAll(sel).forEach(function (el) {
+          if (el.style.display !== 'none') {
+            el.style.setProperty('display', 'none', 'important');
+            hidden.push(el);
+          }
+        });
+      });
 
       var opt = {
         margin: [15, 15, 15, 15],
         filename: (document.title || 'inbiot') + '.pdf',
         image: { type: 'jpeg', quality: 0.97 },
-        html2canvas: { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff', windowWidth: 680 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: 'avoid-all' }
+        html2canvas: { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff' },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
       };
 
-      window.html2pdf().set(opt).from(clone).save()
-        .then(function () { document.body.removeChild(host); restore(); })
-        .catch(function () { document.body.removeChild(host); restore(); });
+      function unhide() { hidden.forEach(function (el) { el.style.removeProperty('display'); }); }
+
+      window.html2pdf().set(opt).from(content).save()
+        .then(function () { unhide(); restore(); })
+        .catch(function () { unhide(); restore(); });
     }
 
     if (window.html2pdf) {
