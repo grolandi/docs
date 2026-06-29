@@ -15,9 +15,6 @@
   "styling": {
     "eyebrows": "breadcrumbs"
   },
-  "contextual": {
-    "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
-  },
   "navigation": {
     "directory": "card",
     "products": [
