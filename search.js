@@ -98,3 +98,64 @@
     }
   });
 })();
+
+// PDF Download button — injected on every doc page
+(function () {
+  var BTN_ID = 'inbiot-pdf-btn';
+
+  function injectPdfButton() {
+    if (document.getElementById(BTN_ID)) return;
+    if (window.location.pathname === '/' || window.location.pathname === '') return;
+
+    var article = document.querySelector('article');
+    if (!article) return;
+
+    var h1 = article.querySelector('h1');
+    if (!h1) return;
+
+    var btn = document.createElement('button');
+    btn.id = BTN_ID;
+    btn.type = 'button';
+    btn.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">' +
+        '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>' +
+        '<polyline points="7 10 12 15 17 10"/>' +
+        '<line x1="12" y1="15" x2="12" y2="3"/>' +
+      '</svg> Download PDF';
+    btn.addEventListener('click', function () { window.print(); });
+
+    h1.insertAdjacentElement('afterend', btn);
+  }
+
+  function reinjectPdfButton() {
+    var existing = document.getElementById(BTN_ID);
+    if (existing) existing.remove();
+    injectPdfButton();
+  }
+
+  // Intercept Next.js client-side navigation
+  var _push = history.pushState;
+  history.pushState = function () {
+    _push.apply(history, arguments);
+    setTimeout(reinjectPdfButton, 350);
+  };
+
+  var _replace = history.replaceState;
+  history.replaceState = function () {
+    _replace.apply(history, arguments);
+    setTimeout(reinjectPdfButton, 350);
+  };
+
+  window.addEventListener('popstate', function () {
+    setTimeout(reinjectPdfButton, 350);
+  });
+
+  // Initial load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(injectPdfButton, 500);
+    });
+  } else {
+    setTimeout(injectPdfButton, 500);
+  }
+})();
