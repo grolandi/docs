@@ -322,16 +322,12 @@
       {
         "label": "Get support",
         "href": "/support/contact-support"
-      },
-      {
-        "href": "https://www.inbiotair.com/",
-        "label": "Visit inbiotair.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Visit inbiotair.com",
+      "href": "https://www.inbiotair.com/"
     }
   },
   "footer": {
