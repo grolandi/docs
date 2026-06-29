@@ -5,8 +5,8 @@
   "description": "Documentation and guides for inBiot products.",
   "colors": {
     "primary": "#009BE5",
-    "light": "#009BE5",
-    "dark": "#009BE5"
+    "light": "#63CCFF",
+    "dark": "#006DB3"
   },
   "favicon": "/favicon.ico",
   "icons": {
