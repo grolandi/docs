@@ -144,7 +144,6 @@
           {
             "group": "Account Management",
             "icon": "user",
-            "root": "my-inbiot-platform/account-management/index",
             "pages": [
               "my-inbiot-platform/account-settings/index",
               "my-inbiot-platform/account-management/account-configuration",
