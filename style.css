@@ -216,39 +216,6 @@ ul:is(:has(> #topbar-cta-button), :has(> li.navbar-link)) {
   flex-shrink: 0;
 }
 
-/* Print / Save as PDF styles */
-@media print {
-  #inbiot-pdf-btn,
-  header, nav, aside, footer,
-  #navbar, #topbar, #sidebar,
-  [id*="navbar"], [id*="topbar"], [id*="sidebar"],
-  [data-component-part="sidebar"],
-  [class*="footer"] {
-    display: none !important;
-  }
-
-  main {
-    margin: 0 !important;
-    padding: 1rem !important;
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-
-  article {
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-
-  h1, h2, h3, h4 {
-    page-break-after: avoid;
-    break-after: avoid;
-  }
-
-  pre, table, figure, blockquote {
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-}
 
 /* custom styling for the suggested articles section on the homepage */
 .columns.suggested-articles {
