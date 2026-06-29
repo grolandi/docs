@@ -1,0 +1,53 @@
+---
+title: "Latest Data"
+description: "Retrieve the last device measurement of IAQ parameters."
+---
+
+Retrieve last device measurement of IAQ parameters.
+
+## Last Device Measurements
+
+`GET /last-measurements/{apiKey}/{systemId}`
+
+Retrieve the last measurement of device parameters.
+
+### Path Parameters
+
+<ParamField path="apiKey" type="string" required>
+  API Key generated in My inBiot platform that identifies your device.
+</ParamField>
+
+<ParamField path="systemId" type="string" required>
+  Device ID generated in My inBiot platform that identifies your device.
+</ParamField>
+
+### Responses
+
+<ResponseField name="200" type="object">
+  Successful operation. Returns an array of device parameter measurements.
+</ResponseField>
+
+<ResponseField name="404" type="object">
+  (Not found) The system could not be found with this API key.
+</ResponseField>
+
+<ResponseField name="429" type="object">
+  (Too many requests) When reached the limit of 6 requests per device per hour.
+</ResponseField>
+
+<ResponseField name="500" type="object">
+  Server error.
+</ResponseField>
+
+### Response Example
+
+```json
+[
+  {
+    "_id": "string",
+    "type": "temperature, humidity, co2, ...",
+    "unit": "ºC, %, ppm, μg/m³, ppb",
+    "measurements": [ ... ]
+  }
+]
+```

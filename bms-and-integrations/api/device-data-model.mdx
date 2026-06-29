@@ -1,0 +1,26 @@
+---
+title: "The Device Data Model"
+description: "Schema of the data model returned by the inBiot API."
+---
+
+Array of objects returned by the API:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `_id` | string | Parameter ID |
+| `type` | string | Parameter type |
+| `unit` | string | Parameter unit |
+| `measurements` | array of objects | Measurements of the parameter |
+
+### Example
+
+```json
+[
+  {
+    "_id": "string",
+    "type": "temperature, humidity, co2, ...",
+    "unit": "ºC, %, ppm, μg/m³, ppb",
+    "measurements": [ ... ]
+  }
+]
+```

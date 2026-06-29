@@ -1,12 +1,12 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Help Center",
-  "description": "Documentation and guides for this template—workspace setup, product how-tos, and support.",
+  "name": "inBiot",
+  "description": "Documentation and guides for inBiot products.",
   "colors": {
-    "primary": "#166E3F",
-    "light": "#26BD6C",
-    "dark": "#166E3F"
+    "primary": "#009BE5",
+    "light": "#009BE5",
+    "dark": "#009BE5"
   },
   "favicon": "/favicon.ico",
   "icons": {
@@ -22,204 +22,294 @@
     "directory": "card",
     "products": [
       {
-        "product": "Help Center",
-        "description": "Setup guides, product how-tos, automation tips, and policies.",
-        "icon": "life-buoy",
+        "product": "MICA Devices",
+        "description": "Installation, configuration, and technical reference for MICA devices.",
+        "icon": "cpu",
         "groups": [
-      {
-        "group": "Getting started & account",
-        "icon": "rocket",
-        "expanded": true,
-        "root": "getting-started/index",
-        "pages": [
-          "getting-started/quickstart",
-          "getting-started/create-account",
-          "getting-started/sign-in-security",
           {
-            "group": "Workspace",
-            "icon": "users",
-            "root": "getting-started/workspace/index",
+            "group": "Inicio",
+            "icon": "house",
+            "root": "mica-devices/index",
             "pages": [
-              "getting-started/workspace/invite-teammates",
-              "getting-started/workspace/roles-permissions",
-              "getting-started/workspace/organization-settings"
+              "mica-devices/antes-de-comenzar"
             ]
           },
           {
-            "group": "Billing & plans",
-            "icon": "credit-card",
-            "root": "getting-started/billing/index",
-            "pages": [
-              "getting-started/billing/compare-plans",
-              "getting-started/billing/upgrade-downgrade",
-              "getting-started/billing/invoices-receipts"
-            ]
-          },
-          {
-            "group": "Integrations",
-            "icon": "plug",
-            "root": "getting-started/integrations/index",
-            "pages": [
-              "getting-started/integrations/connect-slack",
-              "getting-started/integrations/connect-crm",
-              {
-                "group": "Developer integrations",
-                "icon": "code-xml",
-                "root": "getting-started/integrations/developer/index",
-                "pages": [
-                  "getting-started/integrations/developer/oauth-apps",
-                  "getting-started/integrations/developer/webhooks",
-                  "getting-started/integrations/developer/api-keys"
-                ]
-              },
-              {
-                "group": "Partner connectors",
-                "icon": "link-2",
-                "root": "getting-started/integrations/partners/index",
-                "pages": [
-                  "getting-started/integrations/partners/salesforce",
-                  "getting-started/integrations/partners/hubspot",
-                  "getting-started/integrations/partners/custom-connector-template"
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "group": "Product guides",
-        "icon": "book-open",
-        "expanded": true,
-        "root": "product/index",
-        "pages": [
-          "product/interface-overview",
-          "product/keyboard-shortcuts",
-          "product/search-navigation",
-          {
-            "group": "Projects",
-            "icon": "folder-kanban",
-            "root": "product/projects/index",
-            "pages": [
-              "product/projects/create-project",
-              "product/projects/archive-restore"
-            ]
-          },
-          {
-            "group": "Editor & content",
-            "icon": "pen-line",
-            "root": "product/editor/index",
-            "pages": [
-              "product/editor/drafts-publishing",
-              "product/editor/comments-mentions",
-              "product/editor/version-history"
-            ]
-          },
-          {
-            "group": "Automation",
-            "icon": "zap",
-            "root": "product/automation/index",
-            "pages": [
-              "product/automation/rules-triggers",
-              {
-                "group": "Workflow builder",
-                "icon": "workflow",
-                "root": "product/automation/workflows/index",
-                "pages": [
-                  "product/automation/workflows/build-first-workflow",
-                  "product/automation/workflows/conditions-branches",
-                  "product/automation/workflows/error-handling"
-                ]
-              },
-              {
-                "group": "Advanced patterns",
-                "icon": "layers",
-                "root": "product/automation/advanced/index",
-                "pages": [
-                  "product/automation/advanced/rate-limits",
-                  "product/automation/advanced/idempotency",
-                  "product/automation/advanced/retry-policies"
-                ]
-              },
-              "product/automation/scheduled-tasks"
-            ]
-          }
-        ]
-      },
-      {
-        "group": "Support & policies",
-        "icon": "life-buoy",
-        "expanded": true,
-        "root": "support/index",
-        "pages": [
-          "support/contact-support",
-          "support/status-incidents",
-          {
-            "group": "Troubleshooting",
+            "group": "Instalación",
             "icon": "wrench",
-            "root": "support/troubleshooting/index",
+            "root": "mica-devices/instalacion/index",
             "pages": [
-              "support/troubleshooting/login-issues",
-              "support/troubleshooting/performance-issues"
+              "mica-devices/instalacion/wi-fi",
+              "mica-devices/instalacion/modbus-tcp-ip-api-mqtt",
+              "mica-devices/instalacion/modbus-rtu",
+              "mica-devices/instalacion/lorawan-sigfox",
+              "mica-devices/instalacion/lorawan-sigfox-modbus-rtu",
+              "mica-devices/instalacion/nb-iot-lte-m",
+              "mica-devices/instalacion/nb-iot-lte-m-modbus-rtu",
+              "mica-devices/instalacion/bacnet"
             ]
           },
           {
-            "group": "Account & data",
-            "icon": "database",
-            "root": "support/account-data/index",
+            "group": "Configuración",
+            "icon": "settings",
+            "root": "mica-devices/configuracion/index",
             "pages": [
-              "support/account-data/export-data",
-              "support/account-data/delete-account"
-            ]
-          },
-          {
-            "group": "Legal & compliance",
-            "icon": "scale",
-            "root": "support/legal/index",
-            "pages": [
-              "support/legal/terms-of-service",
+              "mica-devices/configuracion/pasos-generales",
               {
-                "group": "Privacy & GDPR",
-                "icon": "shield-check",
-                "root": "support/legal/privacy/index",
+                "group": "Conectividad",
+                "root": "mica-devices/configuracion/conectividad/index",
                 "pages": [
-                  "support/legal/privacy/privacy-policy",
-                  "support/legal/privacy/dpa",
-                  "support/legal/privacy/subprocessors"
+                  "mica-devices/configuracion/conectividad/wi-fi",
+                  "mica-devices/configuracion/conectividad/lorawan",
+                  "mica-devices/configuracion/conectividad/sigfox",
+                  "mica-devices/configuracion/conectividad/nb-iot-lte-m",
+                  "mica-devices/configuracion/conectividad/ethernet"
                 ]
               },
               {
-                "group": "Regional specifics",
-                "icon": "globe",
-                "root": "support/legal/regions/index",
+                "group": "Comunicación local",
+                "root": "mica-devices/configuracion/comunicacion-local/index",
                 "pages": [
-                  "support/legal/regions/eu-residency",
-                  "support/legal/regions/us-residency",
-                  "support/legal/regions/apac"
+                  "mica-devices/configuracion/comunicacion-local/modbus",
+                  "mica-devices/configuracion/comunicacion-local/bacnet"
+                ]
+              },
+              "mica-devices/configuracion/ajustes-del-dispositivo",
+              "mica-devices/configuracion/actualizar-dispositivo",
+              "mica-devices/configuracion/anadir-mica-a-my-inbiot"
+            ]
+          },
+          {
+            "group": "Información Técnica",
+            "icon": "file-text",
+            "root": "mica-devices/informacion-tecnica/index",
+            "pages": [
+              "mica-devices/informacion-tecnica/descripcion-general",
+              "mica-devices/informacion-tecnica/caracteristicas-tecnicas",
+              "mica-devices/informacion-tecnica/sensores",
+              "mica-devices/informacion-tecnica/niveles-y-recomendaciones",
+              "mica-devices/informacion-tecnica/indicadores",
+              "mica-devices/informacion-tecnica/led-y-boton-tactil",
+              "mica-devices/informacion-tecnica/calibracion",
+              "mica-devices/informacion-tecnica/plataforma-my-inbiot",
+              "mica-devices/informacion-tecnica/indicaciones-de-seguridad",
+              "mica-devices/informacion-tecnica/notas-de-uso"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "BMS & Integrations",
+        "description": "BMS connections, integrations, and technical support.",
+        "icon": "plug",
+        "groups": [
+          {
+            "group": "BMS & Integrations",
+            "icon": "plug",
+            "root": "bms-and-integrations/index",
+            "pages": [
+              "bms-and-integrations/bms",
+              {
+                "group": "API",
+                "icon": "code",
+                "root": "bms-and-integrations/api/index",
+                "pages": [
+                  "bms-and-integrations/api/types-of-parameters",
+                  "bms-and-integrations/api/types-of-indicators",
+                  "bms-and-integrations/api/latest-data",
+                  "bms-and-integrations/api/historical-data",
+                  "bms-and-integrations/api/device-data-model"
                 ]
               }
             ]
           }
         ]
-      }
+      },
+      {
+        "product": "My inBiot Platform",
+        "description": "Complete guide to the My inBiot Platform.",
+        "icon": "monitor-dot",
+        "groups": [
+          {
+            "group": "Introduction",
+            "icon": "rocket",
+            "root": "my-inbiot-platform/introduction/index",
+            "pages": [
+              "my-inbiot-platform/introduction/access-to-platform",
+              "my-inbiot-platform/introduction/account-sign-up",
+              "my-inbiot-platform/introduction/account-login",
+              "my-inbiot-platform/introduction/platform-architecture"
+            ]
+          },
+          {
+            "group": "Account Management",
+            "icon": "user",
+            "root": "my-inbiot-platform/account-management/index",
+            "pages": [
+              "my-inbiot-platform/account-management/account-configuration",
+              "my-inbiot-platform/account-management/data-settings",
+              "my-inbiot-platform/account-management/unit-settings"
+            ]
+          },
+          {
+            "group": "My Workspace Management",
+            "icon": "layout-dashboard",
+            "root": "my-inbiot-platform/workspace-management/index",
+            "pages": [
+              {
+                "group": "My Projects Management",
+                "icon": "folder-open",
+                "root": "my-inbiot-platform/workspace-management/projects/index",
+                "pages": [
+                  "my-inbiot-platform/workspace-management/projects/create-project",
+                  "my-inbiot-platform/workspace-management/projects/configure-project",
+                  "my-inbiot-platform/workspace-management/projects/users-management",
+                  "my-inbiot-platform/workspace-management/projects/roles-management",
+                  "my-inbiot-platform/workspace-management/projects/delete-project"
+                ]
+              },
+              {
+                "group": "My Devices Management",
+                "icon": "cpu",
+                "root": "my-inbiot-platform/workspace-management/devices/index",
+                "pages": [
+                  "my-inbiot-platform/workspace-management/devices/add-device",
+                  "my-inbiot-platform/workspace-management/devices/configure-device",
+                  "my-inbiot-platform/workspace-management/devices/delete-device",
+                  "my-inbiot-platform/workspace-management/devices/manufacturing-report"
+                ]
+              },
+              {
+                "group": "My Integrations Management",
+                "icon": "plug",
+                "root": "my-inbiot-platform/workspace-management/integrations/index",
+                "pages": [
+                  "my-inbiot-platform/workspace-management/integrations/create-api-key",
+                  "my-inbiot-platform/workspace-management/integrations/apis-management",
+                  "my-inbiot-platform/workspace-management/integrations/export-apis-file"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Project Features",
+            "icon": "layers",
+            "root": "my-inbiot-platform/project-features/index",
+            "pages": [
+              {
+                "group": "Global Dashboard",
+                "icon": "layout-dashboard",
+                "root": "my-inbiot-platform/project-features/global-dashboard/index",
+                "pages": [
+                  "my-inbiot-platform/project-features/global-dashboard/assign-device-to-project",
+                  "my-inbiot-platform/project-features/global-dashboard/groups-management",
+                  "my-inbiot-platform/project-features/global-dashboard/iaq-qualitative-view",
+                  "my-inbiot-platform/project-features/global-dashboard/iaq-quantitative-view",
+                  "my-inbiot-platform/project-features/global-dashboard/devices-status-view",
+                  "my-inbiot-platform/project-features/global-dashboard/data-export",
+                  {
+                    "group": "Individual Dashboard",
+                    "root": "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/realtime-iaq-parameters",
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/realtime-iaq-indicators",
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/historical-charts",
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/heatmap",
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/outdoor-weather",
+                      "my-inbiot-platform/project-features/global-dashboard/individual-dashboard/data-export"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Shareables",
+                "icon": "share-2",
+                "root": "my-inbiot-platform/project-features/shareables/index",
+                "pages": [
+                  "my-inbiot-platform/project-features/shareables/create-shareable",
+                  "my-inbiot-platform/project-features/shareables/edit-shareable",
+                  {
+                    "group": "Share a Shareable",
+                    "root": "my-inbiot-platform/project-features/shareables/share-shareable/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/shareables/share-shareable/create-qr-code",
+                      "my-inbiot-platform/project-features/shareables/share-shareable/public-link-dashboard",
+                      "my-inbiot-platform/project-features/shareables/share-shareable/public-link-fullscreen"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Alerts",
+                "icon": "bell",
+                "root": "my-inbiot-platform/project-features/alerts/index",
+                "pages": [
+                  {
+                    "group": "Alertas de Parametros",
+                    "root": "my-inbiot-platform/project-features/alerts/parametros/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/alerts/parametros/create-alert",
+                      "my-inbiot-platform/project-features/alerts/parametros/manage-emails",
+                      "my-inbiot-platform/project-features/alerts/parametros/edit-alert",
+                      "my-inbiot-platform/project-features/alerts/parametros/alerts-management"
+                    ]
+                  },
+                  {
+                    "group": "Alertas de Inactividad",
+                    "root": "my-inbiot-platform/project-features/alerts/inactividad/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/alerts/inactividad/create-alert",
+                      "my-inbiot-platform/project-features/alerts/inactividad/manage-emails",
+                      "my-inbiot-platform/project-features/alerts/inactividad/edit-alert",
+                      "my-inbiot-platform/project-features/alerts/inactividad/alerts-management"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Certifications",
+                "icon": "award",
+                "root": "my-inbiot-platform/project-features/certifications/index",
+                "pages": [
+                  {
+                    "group": "WELL Standard / WELL Performance Rating Certification",
+                    "root": "my-inbiot-platform/project-features/certifications/well-standard/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/certifications/well-standard/information",
+                      "my-inbiot-platform/project-features/certifications/well-standard/create-annual-data-report",
+                      "my-inbiot-platform/project-features/certifications/well-standard/create-sensor-justification",
+                      "my-inbiot-platform/project-features/certifications/well-standard/create-calibration-report"
+                    ]
+                  },
+                  {
+                    "group": "RESET Air Certification",
+                    "root": "my-inbiot-platform/project-features/certifications/reset-air/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/certifications/reset-air/information",
+                      "my-inbiot-platform/project-features/certifications/reset-air/realtime-verification"
+                    ]
+                  },
+                  {
+                    "group": "LEEAD Certification",
+                    "root": "my-inbiot-platform/project-features/certifications/leead/index",
+                    "pages": [
+                      "my-inbiot-platform/project-features/certifications/leead/information"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Smart Reports",
+                "icon": "sparkles",
+                "root": "my-inbiot-platform/project-features/smart-reports/index",
+                "pages": [
+                  "my-inbiot-platform/project-features/smart-reports/create-smart-report",
+                  "my-inbiot-platform/project-features/smart-reports/interpret-smart-report"
+                ]
+              }
+            ]
+          }
         ]
-      },
-      {
-        "product": "Docs",
-        "description": "Mintlify product documentation.",
-        "icon": "book-open",
-        "href": "https://www.mintlify.com/docs"
-      },
-      {
-        "product": "Guides",
-        "description": "Best-practice guides for technical writing.",
-        "icon": "compass",
-        "href": "https://www.mintlify.com/guides/introduction"
-      },
-      {
-        "product": "Articles",
-        "description": "News, announcements, and engineering posts.",
-        "icon": "newspaper",
-        "href": "https://www.mintlify.com/blog"
       }
     ]
   },
@@ -232,12 +322,22 @@
       {
         "label": "Get support",
         "href": "/support/contact-support"
+      },
+      {
+        "href": "https://www.inbiotair.com/",
+        "label": "Visit inbiotair.com"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
       "href": "https://dashboard.mintlify.com"
+    }
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/inbiot",
+      "youtube": "https://www.youtube.com/@inbiotmonitoringsl"
     }
   }
 }

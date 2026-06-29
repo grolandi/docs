@@ -26,6 +26,22 @@ toc-item[data-active-deepest] > a::before {
   height: auto;
 }
 
+.nav-logo {
+  height: 2rem !important;
+  width: auto !important;
+  max-width: 14rem !important;
+}
+
+/* Increase sidebar indentation for 3rd and 4th level nested items */
+#sidebar-content button[style="padding-left:2.5rem"],
+#sidebar-content a[style="padding-left:2.5rem"] {
+  padding-left: 3.25rem !important;
+}
+#sidebar-content button[style="padding-left:3.25rem"],
+#sidebar-content a[style="padding-left:3.25rem"] {
+  padding-left: 4rem !important;
+}
+
 /* topbar pill buttons: search, Ask AI, secondary CTA (Get support) */
 #search-bar-entry,
 #assistant-entry,
