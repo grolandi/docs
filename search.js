@@ -138,12 +138,19 @@
       host.appendChild(clone);
       document.body.appendChild(host);
 
+      // Prevent content overflow inside the clone
+      clone.style.cssText = 'max-width:680px;overflow:visible;word-break:break-word;';
+      clone.querySelectorAll('img').forEach(function (img) { img.style.maxWidth = '100%'; });
+      clone.querySelectorAll('pre, code').forEach(function (el) { el.style.whiteSpace = 'pre-wrap'; el.style.wordBreak = 'break-all'; });
+      clone.querySelectorAll('table').forEach(function (t) { t.style.width = '100%'; t.style.tableLayout = 'fixed'; t.style.wordBreak = 'break-word'; });
+
       var opt = {
         margin: [15, 15, 15, 15],
         filename: (document.title || 'inbiot') + '.pdf',
         image: { type: 'jpeg', quality: 0.97 },
         html2canvas: { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff', windowWidth: 680 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: 'avoid-all' }
       };
 
       window.html2pdf().set(opt).from(clone).save()
