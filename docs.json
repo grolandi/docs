@@ -146,7 +146,7 @@
             "icon": "user",
             "root": "my-inbiot-platform/account-management/index",
             "pages": [
-              "my-inbiot-platform/account-settings/index",
+              "my-inbiot-platform/account-management/acces",
               "my-inbiot-platform/account-management/account-configuration",
               "my-inbiot-platform/account-management/data-settings",
               "my-inbiot-platform/account-management/unit-settings"
