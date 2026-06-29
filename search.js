@@ -134,7 +134,7 @@
 
       // Render off-screen so html2canvas can measure it properly
       var host = document.createElement('div');
-      host.style.cssText = 'position:fixed;top:0;left:-9999px;width:820px;background:#fff;color:#111;';
+      host.style.cssText = 'position:fixed;top:0;left:-9999px;width:680px;background:#fff;color:#111;';
       host.appendChild(clone);
       document.body.appendChild(host);
 
@@ -142,7 +142,7 @@
         margin: [15, 15, 15, 15],
         filename: (document.title || 'inbiot') + '.pdf',
         image: { type: 'jpeg', quality: 0.97 },
-        html2canvas: { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff', windowWidth: 860 },
+        html2canvas: { scale: 2, useCORS: true, logging: false, backgroundColor: '#ffffff', windowWidth: 680 },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
       };
 
