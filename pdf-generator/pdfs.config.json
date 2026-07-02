@@ -1,0 +1,65 @@
+{
+  "output_dir": "files",
+  "branding": {
+    "logo": "logo/light.svg",
+    "company": "inBiot Monitoring S.L.",
+    "website": "www.inbiot.es",
+    "accent_color": "#009BE5",
+    "font_family": "Roboto",
+    "logo_white": "pdf-generator/assets/logo-white.svg",
+    "copyright": "Copyright © inBiot Monitoring SL"
+  },
+  "documents": [
+    {
+      "id": "mica-technical-datasheet",
+      "title": "MICA Technical Datasheet",
+      "subtitle": "Product specifications and sensor information",
+      "toc": true,
+      "pages": [
+        "mica-devices/informacion-tecnica/descripcion-general.mdx",
+        "mica-devices/informacion-tecnica/sensores.mdx",
+        "mica-devices/informacion-tecnica/caracteristicas-tecnicas.mdx",
+        "mica-devices/informacion-tecnica/indicadores.mdx",
+        "mica-devices/informacion-tecnica/indicaciones-de-seguridad.mdx"
+      ],
+      "version": "V1.0",
+      "doc_type": "DATASHEET"
+    },
+    {
+      "id": "lorawan-guide",
+      "title": "LoRaWAN Guide",
+      "subtitle": "Connectivity configuration",
+      "toc": false,
+      "pages": [
+        "mica-devices/configuracion/conectividad/lorawan.mdx",
+        "mica-devices/instalacion/lorawan-sigfox.mdx"
+      ],
+      "version": "V1.0",
+      "doc_type": "GUIDE"
+    },
+    {
+      "id": "modbus-guide",
+      "title": "Modbus Guide",
+      "subtitle": "Local communication configuration",
+      "toc": false,
+      "pages": [
+        "mica-devices/configuracion/comunicacion-local/modbus.mdx",
+        "mica-devices/instalacion/modbus-rtu.mdx"
+      ],
+      "version": "V1.0",
+      "doc_type": "GUIDE"
+    },
+    {
+      "id": "bacnet-guide",
+      "title": "BACnet Guide",
+      "subtitle": "Local communication configuration",
+      "toc": false,
+      "pages": [
+        "mica-devices/configuracion/comunicacion-local/bacnet.mdx",
+        "mica-devices/instalacion/bacnet.mdx"
+      ],
+      "version": "V1.0",
+      "doc_type": "GUIDE"
+    }
+  ]
+}
