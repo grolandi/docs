@@ -190,12 +190,28 @@ ul:is(:has(> #topbar-cta-button), :has(> li.navbar-link)) {
   }
 }
 
-/* Suppress active tab highlight on home page (home page isn't part of any tab) */
+/* Suppress active tab highlight on home page — JS marks tabs with data-inbiot-home="true" */
+[data-inbiot-home="true"] {
+  border-bottom-color: transparent !important;
+  border-bottom-width: 0 !important;
+  font-weight: 400 !important;
+  color: inherit !important;
+}
+
+[data-inbiot-home="true"]::before,
+[data-inbiot-home="true"]::after {
+  display: none !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Fallback for any role="tab" based implementation */
 body.inbiot-home [role="tab"][aria-selected="true"],
 body.inbiot-home [role="tab"][data-state="active"] {
   color: inherit !important;
   font-weight: 400 !important;
-  opacity: 0.6 !important;
+  border-bottom-color: transparent !important;
+  border-bottom-width: 0 !important;
 }
 
 body.inbiot-home [role="tab"][aria-selected="true"]::after,

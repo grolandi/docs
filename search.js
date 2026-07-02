@@ -205,9 +205,43 @@
     }, 5000);
   }
 
+  var HOME_TAB_PATHS = [
+    '/mica-devices',
+    '/bms-and-integrations',
+    '/my-inbiot-platform',
+    '/downloads',
+    '/inbiot-api',
+    '/faq'
+  ];
+
+  function suppressHomeTabs() {
+    setTimeout(function () {
+      HOME_TAB_PATHS.forEach(function (path) {
+        document.querySelectorAll('a[href="' + path + '"]').forEach(function (el) {
+          el.setAttribute('data-inbiot-home', 'true');
+          el.style.setProperty('border-bottom-color', 'transparent', 'important');
+          el.style.setProperty('border-bottom-width', '0', 'important');
+          el.style.setProperty('font-weight', '400', 'important');
+          el.style.setProperty('color', 'inherit', 'important');
+        });
+      });
+    }, 300);
+  }
+
+  function clearHomeTabs() {
+    document.querySelectorAll('[data-inbiot-home="true"]').forEach(function (el) {
+      el.removeAttribute('data-inbiot-home');
+      el.style.removeProperty('border-bottom-color');
+      el.style.removeProperty('border-bottom-width');
+      el.style.removeProperty('font-weight');
+      el.style.removeProperty('color');
+    });
+  }
+
   function syncHomeClass() {
     var isHome = window.location.pathname === '/' || window.location.pathname === '';
     document.body.classList.toggle('inbiot-home', isHome);
+    if (isHome) { suppressHomeTabs(); } else { clearHomeTabs(); }
   }
 
   function onNavigate() {
