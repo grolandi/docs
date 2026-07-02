@@ -18,11 +18,6 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Help Center",
-        "icon": "house",
-        "pages": ["index"]
-      },
-      {
         "tab": "MICA Devices",
         "icon": "cpu",
         "groups": [
