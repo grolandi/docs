@@ -16,11 +16,14 @@
     "eyebrows": "breadcrumbs"
   },
   "navigation": {
-    "directory": "card",
-    "products": [
+    "tabs": [
       {
-        "product": "MICA Devices",
-        "description": "Installation, configuration, and technical reference for MICA devices.",
+        "tab": "Help Center",
+        "icon": "house",
+        "pages": ["index"]
+      },
+      {
+        "tab": "MICA Devices",
         "icon": "cpu",
         "groups": [
           {
@@ -96,8 +99,7 @@
         ]
       },
       {
-        "product": "BMS & Integrations",
-        "description": "BMS connections, integrations, and technical support.",
+        "tab": "BMS & Integrations",
         "icon": "plug",
         "groups": [
           {
@@ -123,8 +125,7 @@
         ]
       },
       {
-        "product": "My inBiot Platform",
-        "description": "Complete guide to the My inBiot Platform.",
+        "tab": "My inBiot Platform",
         "icon": "monitor-dot",
         "groups": [
           {
@@ -310,8 +311,10 @@
         ]
       },
       {
-        "product": "Downloads",
+        "tab": "Downloads",
+        "icon": "download",
         "pages": [
+          "downloads",
           "downloads/hardware",
           "downloads/plaform",
           "downloads/manuals"
