@@ -308,6 +308,14 @@
             ]
           }
         ]
+      },
+      {
+        "product": "Downloads",
+        "pages": [
+          "downloads/hardware",
+          "downloads/plaform",
+          "downloads/manuals"
+        ]
       }
     ]
   },
