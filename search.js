@@ -205,10 +205,15 @@
     }, 5000);
   }
 
+  function syncHomeClass() {
+    var isHome = window.location.pathname === '/' || window.location.pathname === '';
+    document.body.classList.toggle('inbiot-home', isHome);
+  }
+
   function onNavigate() {
     var existing = document.getElementById(BTN_ID);
     if (existing) existing.remove();
-    setTimeout(startObserver, 100);
+    setTimeout(function () { syncHomeClass(); startObserver(); }, 100);
   }
 
   var _push = history.pushState;
@@ -220,8 +225,9 @@
   window.addEventListener('popstate', onNavigate);
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', startObserver);
+    document.addEventListener('DOMContentLoaded', function () { syncHomeClass(); startObserver(); });
   } else {
+    syncHomeClass();
     startObserver();
   }
 })();

@@ -190,6 +190,20 @@ ul:is(:has(> #topbar-cta-button), :has(> li.navbar-link)) {
   }
 }
 
+/* Suppress active tab highlight on home page (home page isn't part of any tab) */
+body.inbiot-home [role="tab"][aria-selected="true"],
+body.inbiot-home [role="tab"][data-state="active"] {
+  color: inherit !important;
+  font-weight: 400 !important;
+  opacity: 0.6 !important;
+}
+
+body.inbiot-home [role="tab"][aria-selected="true"]::after,
+body.inbiot-home [role="tab"][data-state="active"]::after {
+  display: none !important;
+  background: transparent !important;
+}
+
 /* Download PDF button */
 #inbiot-pdf-btn {
   display: inline-flex;
